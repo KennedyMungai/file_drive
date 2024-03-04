@@ -1,5 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
+import { api } from '@/convex/_generated/api'
 import {
 	SignInButton,
 	SignOutButton,
@@ -8,10 +9,13 @@ import {
 	useAuth,
 	useUser
 } from '@clerk/nextjs'
+import { useMutation } from 'convex/react'
 
 export default function Home() {
 	const { userId, isSignedIn } = useAuth()
 	const { user } = useUser()
+
+	const createFile = useMutation(api.files.createFile)
 
 	return (
 		<main className='min-h-screen items-center py-8 flex flex-col'>
@@ -25,6 +29,10 @@ export default function Home() {
 					<Button>Sign In</Button>
 				</SignInButton>
 			</SignedOut>
+
+			<Button onClick={() => createFile({ name: 'hello world' })}>
+				Click Me
+			</Button>
 		</main>
 	)
 }
