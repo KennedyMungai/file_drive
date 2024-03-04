@@ -9,13 +9,11 @@ import {
 	useAuth,
 	useUser
 } from '@clerk/nextjs'
-import { useMutation } from 'convex/react'
+import { useMutation, useQuery } from 'convex/react'
 
 export default function Home() {
-	const { userId, isSignedIn } = useAuth()
-	const { user } = useUser()
-
 	const createFile = useMutation(api.files.createFile)
+	const getFiles = useQuery(api.files.getFiles)
 
 	return (
 		<main className='min-h-screen items-center py-8 flex flex-col'>
