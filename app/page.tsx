@@ -1,12 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { api } from '@/convex/_generated/api'
-import {
-	SignInButton,
-	SignOutButton,
-	SignedIn,
-	SignedOut
-} from '@clerk/nextjs'
+import { SignInButton, SignOutButton, SignedIn, SignedOut } from '@clerk/nextjs'
 import { useMutation, useQuery } from 'convex/react'
 
 export default function Home() {
@@ -14,7 +9,7 @@ export default function Home() {
 	const files = useQuery(api.files.getFiles)
 
 	return (
-		<main className='min-h-screen items-center py-8 flex flex-col'>
+		<main className='items-center py-8 flex flex-col'>
 			<SignedIn>
 				<SignOutButton>
 					<Button>Sign Out Button</Button>
