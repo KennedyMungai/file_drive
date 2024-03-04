@@ -7,7 +7,6 @@ export const createFile = mutation({
 	},
 	async handler(ctx, args) {
 		const identity = await ctx.auth.getUserIdentity()
-		console.log(identity?.name)
 
 		if (!identity) {
 			throw new ConvexError('You must be logged in to upload a file')
@@ -22,6 +21,12 @@ export const createFile = mutation({
 export const getFiles = query({
 	args: {},
 	async handler(ctx, args) {
+		const identity = await ctx.auth.getUserIdentity()
+
+		if (!identity) {
+			throw new ConvexError('You must be logged in to upload a file')
+		}
+
 		return ctx.db.query('files').collect()
 	}
 })
