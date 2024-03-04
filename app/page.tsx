@@ -14,7 +14,7 @@ export default function Home() {
 	const { user } = useUser()
 
 	return (
-		<main className='min-h-screen'>
+		<main className='min-h-screen items-center py-8 flex flex-col'>
 			<SignedIn>
 				<SignOutButton />
 			</SignedIn>
