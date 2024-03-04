@@ -5,7 +5,7 @@ type Props = {}
 
 const Header = (props: Props) => {
 	return (
-		<div className='border-b'>
+		<div className='border-b py-4 bg-gray-50'>
 			<div className='container mx-auto flex justify-between'>
 				Hello World
 				<UserButton />
