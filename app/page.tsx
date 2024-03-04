@@ -16,12 +16,15 @@ export default function Home() {
 	return (
 		<main className='min-h-screen items-center py-8 flex flex-col'>
 			<SignedIn>
-				<SignOutButton />
+				<SignOutButton>
+					<Button>Sign Out Button</Button>
+				</SignOutButton>
 			</SignedIn>
 			<SignedOut>
-				<SignInButton mode='modal' />
+				<SignInButton mode='modal'>
+					<Button>Sign In</Button>
+				</SignInButton>
 			</SignedOut>
-			<Button>Hello World</Button>
 		</main>
 	)
 }
