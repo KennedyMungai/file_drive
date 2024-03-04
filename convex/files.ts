@@ -24,7 +24,7 @@ export const getFiles = query({
 		const identity = await ctx.auth.getUserIdentity()
 
 		if (!identity) {
-			throw new ConvexError('You must be logged in to upload a file')
+			return []
 		}
 
 		return ctx.db.query('files').collect()
