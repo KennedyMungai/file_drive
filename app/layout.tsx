@@ -19,7 +19,10 @@ export default function RootLayout({
 	return (
 		<html lang='en' suppressHydrationWarning>
 			<body className={inter.className}>
-				<ConvexClientProvider>{children}</ConvexClientProvider>
+				<ConvexClientProvider>
+					<Header />
+					{children}
+				</ConvexClientProvider>
 			</body>
 		</html>
 	)
