@@ -7,8 +7,9 @@ const Header = (props: Props) => {
 	return (
 		<div className='border-b py-4 bg-gray-50'>
 			<div className='container mx-auto flex justify-between'>
-				<div className="uppercase font-semibold text-2xl">Hello World</div>
-				
+				<div className='uppercase font-semibold text-2xl'>
+					File Drive
+				</div>
 				<UserButton />
 			</div>
 		</div>
