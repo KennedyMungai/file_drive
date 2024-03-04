@@ -5,9 +5,7 @@ import {
 	SignInButton,
 	SignOutButton,
 	SignedIn,
-	SignedOut,
-	useAuth,
-	useUser
+	SignedOut
 } from '@clerk/nextjs'
 import { useMutation, useQuery } from 'convex/react'
 
